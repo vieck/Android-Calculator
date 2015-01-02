@@ -1,0 +1,2377 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ff020202"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".CalculatorActivity">
+<ViewFlipper
+    android:id="@+id/viewflipperlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="6dp"
+    android:inAnimation="@anim/slide_in_from_bottom"
+    android:outAnimation="@anim/slide_out_to_top">
+    <LinearLayout
+        android:id="@+id/default_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/black">
+    <TextView
+        style="@style/DefaultTextView"
+        android:id="@+id/editNumbers"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:lines="1"
+        android:text="@string/zero"/>
+
+    <TextView
+        style="@style/DefaultHintTextView"
+        android:id="@+id/editHint"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:gravity="end"
+        android:singleLine="true"
+        android:text="@string/zero"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/clear_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/clear"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/inParenthesis"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/in"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/outParenthesis"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/out"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/equal_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/equals"
+            android:onClick="onClick"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/nine_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/nine"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/eight_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/eight"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/seven_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/seven"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/multiply_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/multiply_operand"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/six_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/six"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/five_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/five"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/four_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/four"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/divide_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/divide_operand"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/three_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/three"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/two_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/two"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/one_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/one"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/add_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/add_operand"
+            android:onClick="onClick"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/back_button"
+            style="@style/DefaultUndoButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/back"
+            android:onClick="onClick"/>
+        <Button
+            android:id="@+id/zero_button"
+            style="@style/DefaultNumberButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/zero"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/decimal_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/decimal"
+            android:onClick="onClick"/>
+
+        <Button
+            android:id="@+id/subtract_button"
+            style="@style/DefaultButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/subtract_operand"
+            android:onClick="onClick"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <Button
+            android:id="@+id/setting_button"
+            style="@style/DefaultThemeButton"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/theme_string"
+            android:onClick="startTheme"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/inverted_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/invertedEditNumbers"
+            style="@style/InvertedTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:lines="1"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/invertedEditHint"
+            style="@style/InvertedHintTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/zero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/inverted_clear_button"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/invertedInParenthesis"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/in"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/invertedOutParenthesis"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/out"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_equal_button"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equals"
+                android:onClick="onClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/inverted_nine_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_eight_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_seven_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_multiply_button"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/inverted_six_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/six"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_five_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/five"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_four_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/four"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_divide_button"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/divide_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/inverted_three_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/three"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_two_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_one_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/one"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_add_button"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/inverted_back_button"
+                style="@style/InvertedUndoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_zero_button"
+                style="@style/InvertedNumberButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_decimal_button"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/inverted_subtract_button"
+                style="@style/InvertedButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/subtract_operand"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/inverted_setting_button"
+                style="@style/InvertedThemeButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="startTheme"
+                android:text="@string/theme_string" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/red_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/redEditNumbers"
+            style="@style/RedGlowTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:lines="1"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/redEditHint"
+            style="@style/RedGlowHintText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/zero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/red_clear_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/redInParenthesis"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/in"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/redOutParenthesis"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/out"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_equal_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equals"
+                android:onClick="onClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/red_nine_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_eight_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_seven_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_multiply_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/red_six_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/six"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_five_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/five"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_four_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/four"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_divide_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/divide_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/red_three_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/three"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_two_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_one_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/one"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_add_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/red_back_button"
+                style="@style/RedUndoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_zero_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_decimal_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/red_subtract_button"
+                style="@style/RedGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/subtract_operand"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/red_setting_button"
+                style="@style/RedThemeButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="startTheme"
+                android:text="@string/theme_string" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/green_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff020202"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/greenEditNumbers"
+            style="@style/GreenGlowTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:lines="1"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/greenEditHint"
+            style="@style/GreenGlowHintText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/zero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/green_clear_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/greenInParenthesis"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/in"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/greenOutParenthesis"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/out"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_equal_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equals"
+                android:onClick="onClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/green_nine_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_eight_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_seven_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_multiply_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/green_six_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/six"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_five_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/five"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_four_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/four"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_divide_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/divide_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/green_three_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/three"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_two_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_one_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/one"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_add_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/green_back_button"
+                style="@style/GreenUndoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_zero_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_decimal_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/green_subtract_button"
+                style="@style/GreenGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/subtract_operand"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/green_setting_button"
+                style="@style/GreenThemeButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="startTheme"
+                android:text="@string/theme_string" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/yellow_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff020202"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/yellowEditNumbers"
+            style="@style/YellowGlowTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:lines="1"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/yellowEditHint"
+            style="@style/YellowGlowHintText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/zero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/yellow_clear_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellowInParenthesis"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/in"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellowOutParenthesis"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/out"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_equal_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equals"
+                android:onClick="onClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/yellow_nine_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_eight_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_seven_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_multiply_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/yellow_six_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/six"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_five_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/five"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_four_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/four"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_divide_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/divide_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/yellow_three_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/three"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_two_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_one_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/one"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_add_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/yellow_back_button"
+                style="@style/YellowUndoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_zero_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_decimal_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/yellow_subtract_button"
+                style="@style/YellowGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/subtract_operand"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/yellow_setting_button"
+                style="@style/YellowThemeButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="startTheme"
+                android:text="@string/theme_string" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/orange_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff020202"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/orangeEditNumbers"
+            style="@style/OrangeGlowTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:lines="1"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/orangeEditHint"
+            style="@style/OrangeGlowHintText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/zero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/orange_clear_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orangeInParenthesis"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/in"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orangeOutParenthesis"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/out"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_equal_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equals"
+                android:onClick="onClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/orange_nine_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_eight_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_seven_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_multiply_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/orange_six_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/six"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_five_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/five"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_four_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/four"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_divide_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/divide_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/orange_three_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/three"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_two_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_one_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/one"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_add_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/orange_back_button"
+                style="@style/OrangeUndoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_zero_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_decimal_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/orange_subtract_button"
+                style="@style/OrangeGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/subtract_operand"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/orange_setting_button"
+                style="@style/OrangeThemeButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="startTheme"
+                android:text="@string/theme_string" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/blue_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff020202"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/blueEditNumbers"
+            style="@style/BlueGlowTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:lines="1"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/blueEditHint"
+            style="@style/BlueGlowHintText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/zero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/blue_clear_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blueInParenthesis"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/in"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blueOutParenthesis"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/out"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_equal_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equals"
+                android:onClick="onClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/blue_nine_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_eight_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_seven_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_multiply_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/blue_six_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/six"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_five_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/five"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_four_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/four"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_divide_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/divide_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/blue_three_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/three"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_two_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_one_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/one"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_add_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/blue_back_button"
+                style="@style/BlueUndoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_zero_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_decimal_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/blue_subtract_button"
+                style="@style/BlueGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/subtract_operand"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/blue_setting_button"
+                style="@style/BlueThemeButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="startTheme"
+                android:text="@string/theme_string" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/purple_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff020202"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/purpleEditNumbers"
+            style="@style/PurpleGlowTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:lines="1"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/purpleEditHint"
+            style="@style/PurpleGlowHintText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/zero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/purple_clear_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purpleInParenthesis"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/in"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purpleOutParenthesis"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/out"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_equal_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equals"
+                android:onClick="onClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/purple_nine_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_eight_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_seven_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_multiply_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/purple_six_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/six"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_five_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/five"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_four_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/four"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_divide_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/divide_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/purple_three_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/three"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_two_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_one_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/one"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_add_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/purple_back_button"
+                style="@style/PurpleUndoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_zero_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_decimal_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/purple_subtract_button"
+                style="@style/PurpleGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/subtract_operand"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/purple_setting_button"
+                style="@style/PurpleThemeButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="startTheme"
+                android:text="@string/theme_string" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pink_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff020202"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/pinkEditNumbers"
+            style="@style/PinkGlowTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:lines="1"
+            android:text="@string/zero" />
+
+        <TextView
+            android:id="@+id/pinkEditHint"
+            style="@style/PinkGlowHintText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/zero" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pink_clear_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/clear"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pinkInParenthesis"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/in"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pinkOutParenthesis"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/out"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_equal_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/equals"
+                android:onClick="onClick"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pink_nine_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/nine"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_eight_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/eight"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_seven_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/seven"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_multiply_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/multiply_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pink_six_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/six"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_five_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/five"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_four_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/four"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_divide_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/divide_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pink_three_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/three"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_two_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/two"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_one_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/one"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_add_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/add_operand"
+                android:onClick="onClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pink_back_button"
+                style="@style/PinkUndoButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/back"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_zero_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/zero"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_decimal_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/decimal"
+                android:onClick="onClick"/>
+
+            <Button
+                android:id="@+id/pink_subtract_button"
+                style="@style/PinkGlow"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/subtract_operand"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pink_setting_button"
+                style="@style/PinkThemeButton"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:onClick="startTheme"
+                android:text="@string/theme_string" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ViewFlipper>
+</LinearLayout>
+    <!--
+<Button
+style="@style/DefaultNumberButton"
+android:id="@+id/pi_button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="@string/pi" />
+
+<Button
+style="@style/DefaultNumberButton"
+android:id="@+id/e_button"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:layout_weight="1"
+android:text="@string/e"/>-->

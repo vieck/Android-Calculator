@@ -1,0 +1,411 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="DefaultTextView">
+        <item name="android:textColor">@color/orange</item>
+        <item name="android:textSize">60sp</item>
+        <item name="android:shadowColor">@color/orange_glow</item>
+        <item name="android:shadowRadius">3</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+    </style>
+
+    <style name="DefaultHintTextView">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:shadowColor">@color/red_glow</item>
+        <item name="android:shadowRadius">3</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+
+    </style>
+
+    <style name="DefaultButton">
+        <item name="android:background">@drawable/button_background_default</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@drawable/text_color_default</item>
+        <item name="android:textSize">@dimen/phone_text_size</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="DefaultUndoButton">
+        <item name="android:background">@drawable/button_background_default</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@drawable/text_color_default</item>
+        <item name="android:textSize">@dimen/undo_button_text_size</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="DefaultNumberButton">
+        <item name="android:background">@drawable/button_background_default</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@drawable/text_color_default_numerical</item>
+        <item name="android:textSize">@dimen/phone_text_size</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_default</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@drawable/text_color_default</item>
+        <item name="android:textSize">@dimen/theme_text_size</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="InvertedTextView" parent="DefaultTextView">
+        <item name="android:textColor">@color/platinum</item>
+        <item name="android:textSize">60sp</item>
+        <item name="android:shadowColor">@color/silver_tinge</item>
+        <item name="android:shadowRadius">3</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+    </style>
+
+    <style name="InvertedHintTextView" parent="DefaultHintTextView">
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:shadowColor">@color/red_glow</item>
+        <item name="android:shadowRadius">3</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">0</item>
+
+    </style>
+
+    <style name="InvertedButton" parent="DefaultButton">
+        <item name="android:background">@drawable/button_background_inverted</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@drawable/text_color_inverted</item>
+        <item name="android:textSize">@dimen/phone_text_size</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="InvertedUndoButton" parent="DefaultUndoButton">
+        <item name="android:background">@drawable/button_background_inverted</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@drawable/text_color_inverted</item>
+        <item name="android:textSize">@dimen/undo_button_text_size</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="InvertedNumberButton" parent="DefaultNumberButton">
+        <item name="android:background">@drawable/button_background_inverted</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@drawable/text_color_inverted</item>
+        <item name="android:textSize">@dimen/phone_text_size</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="InvertedThemeButton" parent="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_inverted</item>
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:textColor">@drawable/text_color_inverted</item>
+        <item name="android:textSize">@dimen/theme_text_size</item>
+        <item name="android:layout_height">@dimen/button_height</item>
+    </style>
+
+    <style name="RedGlow" parent="DefaultButton">
+        <item name="android:background">@drawable/button_background_red_glow</item>
+        <item name="android:textColor">@drawable/text_color_red_glow</item>
+        <item name="android:shadowColor">@color/ferrari_red</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="RedUndoButton" parent="DefaultUndoButton">
+        <item name="android:background">@drawable/button_background_red_glow</item>
+        <item name="android:textColor">@drawable/text_color_red_glow</item>
+        <item name="android:shadowColor">@color/ferrari_red</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="RedGlowTextView" parent="DefaultTextView">
+        <item name="android:textColor">@color/red_glow</item>
+        <item name="android:shadowColor">@color/ferrari_red</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="RedGlowHintText" parent="DefaultHintTextView">
+        <item name="android:textColor">@color/gray</item>
+        <item name="android:shadowColor">@color/metallic_slate_blue</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="RedThemeButton" parent="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_red_glow</item>
+        <item name="android:textColor">@drawable/text_color_red_glow</item>
+        <item name="android:shadowColor">@color/ferrari_red</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="GreenGlow" parent="DefaultButton">
+        <item name="android:background">@drawable/button_background_green_glow</item>
+        <item name="android:textColor">@drawable/text_color_green_glow</item>
+        <item name="android:shadowColor">@color/emerald_green</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="GreenUndoButton" parent="DefaultUndoButton">
+        <item name="android:background">@drawable/button_background_green_glow</item>
+        <item name="android:textColor">@drawable/text_color_green_glow</item>
+        <item name="android:shadowColor">@color/emerald_green</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="GreenGlowTextView" parent="DefaultTextView">
+        <item name="android:textColor">@color/green_glow</item>
+        <item name="android:shadowColor">@color/emerald_green</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="GreenGlowHintText" parent="DefaultHintTextView">
+        <item name="android:textColor">@color/dark_yellow</item>
+        <item name="android:shadowColor">@color/yellow_glow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="GreenThemeButton" parent="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_green_glow</item>
+        <item name="android:textColor">@drawable/text_color_green_glow</item>
+        <item name="android:shadowColor">@color/emerald_green</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="YellowGlow" parent="DefaultButton">
+        <item name="android:background">@drawable/button_background_yellow_glow</item>
+        <item name="android:textColor">@drawable/text_color_yellow_glow</item>
+        <item name="android:shadowColor">@color/yellow_glow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="YellowUndoButton" parent="DefaultUndoButton">
+        <item name="android:background">@drawable/button_background_yellow_glow</item>
+        <item name="android:textColor">@drawable/text_color_yellow_glow</item>
+        <item name="android:shadowColor">@color/yellow_glow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="YellowGlowTextView" parent="DefaultTextView">
+        <item name="android:textColor">@color/yellow_glow</item>
+        <item name="android:shadowColor">@color/yellow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="YellowGlowHintText" parent="DefaultHintTextView">
+        <item name="android:textColor">@color/light_blue</item>
+        <item name="android:shadowColor">@color/blue_diamond</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="YellowThemeButton" parent="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_yellow_glow</item>
+        <item name="android:textColor">@drawable/text_color_yellow_glow</item>
+        <item name="android:shadowColor">@color/yellow_glow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="OrangeGlow" parent="DefaultButton">
+        <item name="android:background">@drawable/button_background_orange_glow</item>
+        <item name="android:textColor">@drawable/text_color_orange_glow</item>
+        <item name="android:shadowColor">@color/orange_glow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="OrangeUndoButton" parent="DefaultUndoButton">
+        <item name="android:background">@drawable/button_background_orange_glow</item>
+        <item name="android:textColor">@drawable/text_color_orange_glow</item>
+        <item name="android:shadowColor">@color/orange_glow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="OrangeGlowTextView" parent="DefaultTextView">
+        <item name="android:textColor">@color/orange_glow</item>
+        <item name="android:shadowColor">@color/orange</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="OrangeGlowHintText" parent="DefaultHintTextView">
+        <item name="android:textColor">@color/silver_tinge</item>
+        <item name="android:shadowColor">@color/platinum</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="OrangeThemeButton" parent="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_orange_glow</item>
+        <item name="android:textColor">@drawable/text_color_orange_glow</item>
+        <item name="android:shadowColor">@color/orange_glow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PurpleGlow" parent="DefaultButton">
+        <item name="android:background">@drawable/button_background_purple_glow</item>
+        <item name="android:textColor">@drawable/text_color_purple_glow</item>
+        <item name="android:shadowColor">@color/purple</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PurpleUndoButton" parent="DefaultUndoButton">
+        <item name="android:background">@drawable/button_background_purple_glow</item>
+        <item name="android:textColor">@drawable/text_color_purple_glow</item>
+        <item name="android:shadowColor">@color/purple</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PurpleGlowTextView" parent="DefaultTextView">
+        <item name="android:textColor">@color/purple_iris</item>
+        <item name="android:shadowColor">@color/purple_amethyst</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PurpleGlowHintText" parent="DefaultHintTextView">
+        <item name="android:textColor">@color/emerald_green</item>
+        <item name="android:shadowColor">@color/green</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PurpleThemeButton" parent="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_purple_glow</item>
+        <item name="android:textColor">@drawable/text_color_purple_glow</item>
+        <item name="android:shadowColor">@color/purple</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PinkGlow" parent="DefaultButton">
+        <item name="android:background">@drawable/button_background_pink_glow</item>
+        <item name="android:textColor">@drawable/text_color_pink_glow</item>
+        <item name="android:shadowColor">@color/magenta</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PinkUndoButton" parent="DefaultUndoButton">
+        <item name="android:background">@drawable/button_background_pink_glow</item>
+        <item name="android:textColor">@drawable/text_color_pink_glow</item>
+        <item name="android:shadowColor">@color/magenta</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PinkGlowTextView" parent="DefaultTextView">
+        <item name="android:textColor">@color/neon_pink</item>
+        <item name="android:shadowColor">@color/magenta</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PinkGlowHintText" parent="DefaultHintTextView">
+        <item name="android:textColor">@color/metallic_slate_blue</item>
+        <item name="android:shadowColor">@color/glacial_blue_ice</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="PinkThemeButton" parent="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_pink_glow</item>
+        <item name="android:textColor">@drawable/text_color_pink_glow</item>
+        <item name="android:shadowColor">@color/magenta</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="BlueGlow" parent="DefaultButton">
+        <item name="android:background">@drawable/button_background_blue_glow</item>
+        <item name="android:textColor">@drawable/text_color_blue_glow</item>
+        <item name="android:shadowColor">@color/blue_diamond</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="BlueUndoButton" parent="DefaultUndoButton">-
+        <item name="android:background">@drawable/button_background_blue_glow</item>
+        <item name="android:textColor">@drawable/text_color_blue_glow</item>
+        <item name="android:shadowColor">@color/blue_diamond</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="BlueGlowTextView" parent="DefaultTextView">
+        <item name="android:textColor">@color/blue_diamond</item>
+        <item name="android:shadowColor">@color/iceberg</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="BlueGlowHintText" parent="DefaultHintTextView">
+        <item name="android:textColor">@color/green</item>
+        <item name="android:shadowColor">@color/green_glow</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+    <style name="BlueThemeButton" parent="DefaultThemeButton">
+        <item name="android:background">@drawable/button_background_blue_glow</item>
+        <item name="android:textColor">@drawable/text_color_blue_glow</item>
+        <item name="android:shadowColor">@color/blue_diamond</item>
+        <item name="android:shadowDx">0.0</item>
+        <item name="android:shadowDy">0.0</item>
+        <item name="android:shadowRadius">15</item>
+    </style>
+
+</resources>
